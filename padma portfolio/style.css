@@ -1,0 +1,379 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+header {
+    background-color: #090909;
+    color: #fff;
+    padding: 0.4px ;
+}
+header .logo {
+    font-size: 3rem;
+    text-align:start;
+    margin: 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Home Section */
+#home {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#home h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#home .intro {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Distribute space between the image and typing effect */
+}
+
+.profile-image {
+    flex: 1; /* Allow image container to take equal space */
+    max-width: 4500px; /* Ajust image size */
+    max-height: 4500px;
+    border-radius: 50%;
+}
+
+.profile-image img {
+    width: 200%; /* Make the image responsive */
+    height: 200%;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Crop and fit the image within the circular frame */
+    display: block; /* Optional: Center alignment helper */
+    margin: 0 auto; /* Optional: Center the image horizontally */
+    border: 5px solid #0b0b0b; /* Optional: Add a border for better visibility */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); / /* Optional: Add rounded corners for the image */
+}
+
+.typing-container {
+    flex: 2; /* Make typing container take more space */
+    padding-left: 500px; /* Add space between image and typing effect */
+}
+.typing-line {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    border-right: 3px solid black;
+    width: 0;
+    animation: typing 2s steps(30) var(--animation-delay) forwards, blink 0.75s step-end infinite;
+}
+#home .intro p {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
+    width: 0;
+    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* About Section */
+#about {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#about h1 {
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+#about .container {
+    display: flex; /* Flexbox for side-by-side layout */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Ensure image and text are properly aligned */
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the container */
+    gap: 30px; /* Space between text and image */
+    padding: 0 20px; /* Add horizontal padding for spacing */
+}
+
+#about .about-text {
+    flex: 1; /* Text takes up equal space */
+    font-size: 18px;
+    color: #555;
+    text-align: right; /* Align text to the left */
+    line-height: 1.8;
+    font-family: 'Arial', sans-serif;
+}
+
+#about .profile-image {
+    flex: 0 0 auto; /* Prevent image from stretching */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: center; /* Vertically align the image */
+}
+
+#about .profile-image img {
+    width: 250px; /* Adjust image size */
+    height: 250px; /* Maintain square dimensions */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Proper cropping */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    border: 5px solid #fff; /* Clean border */
+}
+
+@media (max-width: 768px) {
+    #about .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center;
+    }
+
+    #about .profile-image {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #about .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #about .about-text {
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* Projects Section */
+#projects .container {
+    max-width: 1200px; /* Limits the width of the container to 1200px for better formatting */
+/* Centers the container horizontally */
+    padding: 50px; /* Adds padding around the container */
+    background-color: #fff;
+}
+
+#projects h2 {
+    text-align: center; /* Centers the heading */
+    font-size: 32px; /* Increases font size for the project heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    font-family: 'Arial', sans-serif; /* Uses Arial font */
+}
+
+.projects-row {
+    display: flex; /* Uses Flexbox to align project items in a row */
+    justify-content: space-between; /* Distributes space evenly between items */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if the screen is small */
+    gap: 20px; /* Adds space between items */
+}
+
+.project-item {
+    background-color: #f9f9f9; /* Sets a light background for the project items */
+    padding: 15px; /* Adds padding inside each project item */
+    border-radius: 8px; /* Gives rounded corners to each item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    flex: 1; /* Makes each project item take equal space */
+    min-width: 250px; /* Sets a minimum width for each item */
+    max-width: 300px; /* Sets a maximum width for each item */
+}
+
+.project-item strong {
+    font-size: 20px; /* Makes the project title bold and slightly larger */
+    color: #333; /* Dark color for the project title */
+}
+
+.project-item p {
+    font-size: 16px; /* Standard font size for the project description */
+    color: #666; /* Lighter color for the description text */
+    margin-top: 5px; /* Adds space between the title and description */
+}
+
+/* Resume Section */
+#resume {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#resume h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.resume-button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.resume-button:hover {
+    background-color: #555;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#contact .container {
+    max-width: 800px; /* Limit the width for better container formatting */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Display content in a column */
+    gap: 20px; /* Add space between elements */
+}
+
+#contact p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+ul li a {
+    color: #0073b1;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+#contact-form {
+    display: flex;
+    flex-direction: column; /* Align form fields in a column */
+    gap: 15px; /* Space between form elements */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Full width */
+}
+
+.form-group textarea {
+    height: 150px; /* Set height for the message box */
+    resize: vertical; /* Allow vertical resizing of the message box */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0073b1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #005f8d; /* Change color on hover */
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
